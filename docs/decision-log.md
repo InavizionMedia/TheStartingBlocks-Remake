@@ -42,3 +42,13 @@ Jon delegated all decisions for this pass ("you make all the decisions... no nee
 - **Refusal machinery** (drop unverified scarcity) fired correctly with zero deliberation — the strongest pattern in the set.
 - Gap: prompt has no rule for **brand/email domain mismatch** (Start The Possible vs The Starting Blocks). Candidate addition: "if the contact email domain differs from the site domain, flag it."
 - Gap: **screenshot/visual review** isn't in the prompt — palette and imagery were decided blind. Candidate addition: a visual-reference step (attach screenshot or brand assets) before Part 5.
+
+## CORRECTION — light version in her colors (Jon, 2026-10-04)
+
+Jon redirected: this is Yolando's site, not his — his personal charcoal/gold taste does not apply. The build is now a LIGHT version in her actual brand scheme.
+
+**Her real palette** (extracted from thestartingblocks.com's Divi theme CSS, not guessed): accent red **#E02B20** (theme customizer accent — links, buttons, footer headings, menu highlights), white backgrounds, near-black text. The site is light and warm; the earlier charcoal/gold was my default, not her brand.
+
+**New tokens:** bg warm white #FDFCFA · panels #F7F5F1 · ink #1A1A1A · muted #6B6560 · accent #E02B20 · hairlines rgba(224,43,32,.14). Red used sparingly — many small touches, never large areas.
+
+**Prompt-iteration note:** this validates the "visual-reference step" gap flagged above — the prompt needs a rule to pull the real palette (theme CSS / screenshot / brand assets) before art direction, instead of falling back to defaults. Defaults silently applied the wrong taste. New candidate rule: "extract the site's actual accent color from its theme CSS or a screenshot; never default to the builder's house palette on someone else's brand."
