@@ -2,13 +2,11 @@
 
 > A full redesign draft of **thestartingblocks.com** — Yolando Mitchell Brown's done-for-you one-page website service for service-based businesses.
 
-[![Pages](https://img.shields.io/badge/Pages-live-brightgreen)](https://agentzlab.github.io/TheStartingBlocks-Remake/)
 [![Last commit](https://img.shields.io/github/last-commit/agentzlab/TheStartingBlocks-Remake)](https://github.com/agentzlab/TheStartingBlocks-Remake/commits/main)
 [![Repo size](https://img.shields.io/github/repo-size/agentzlab/TheStartingBlocks-Remake)](https://github.com/agentzlab/TheStartingBlocks-Remake)
-[![Static site](https://img.shields.io/badge/site-static-blue)](https://agentzlab.github.io/TheStartingBlocks-Remake/)
-[![Preview](https://img.shields.io/badge/Preview-live-red)](https://agentzlab.github.io/TheStartingBlocks-Remake/)
+[![Static site](https://img.shields.io/badge/site-static-blue)](https://github.com/agentzlab/TheStartingBlocks-Remake)
 
-**Live preview:** https://agentzlab.github.io/TheStartingBlocks-Remake/
+**Preview:** via the private Muse artifact for now — see below for the GitHub Pages note.
 
 ![Hero screenshot](assets/screenshot.png)
 
@@ -40,7 +38,11 @@
 | Fonts | Google Fonts: Prata + Roboto |
 | Video | YouTube + Vimeo embeds |
 | Checkout | PayPal payment links (her real ones) |
-| Hosting | GitHub Pages, no build step |
+| Hosting | GitHub Pages (pending — needs repo public or plan upgrade), no build step |
+
+> **Pages note:** this repo is private on the free plan, which doesn't allow GitHub Pages.
+> The live preview currently runs on the private Muse artifact. Flipping the repo public
+> would enable `https://agentzlab.github.io/TheStartingBlocks-Remake/` — Jon's call.
 
 ## Project structure
 
