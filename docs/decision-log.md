@@ -1,94 +1,18 @@
-# DECISION LOG — Harvest Prompt first drive run (2026-10-04)
 
-Jon delegated all decisions for this pass ("you make all the decisions... no need for my approval yet"). Every judgment call below is mine. Spots where the prompt's machinery would have asked its ONE question are marked [Q-SPOT], with my verdict on whether deciding beat asking — this is the prompt-iteration data for dialing the prompt in.
+## Round 5 — match her pricing exactly + fonts + portfolio reimagining (Jon, 2026-10-04)
 
-## Factual conflicts (prompt Part 2: omit or ask one question)
+Jon: "This pricing table didn't need the color. Only the middle one did... Can you use what she had set up?"
 
-1. **Timeline: "by end of day" vs "7–10 business days"** [Q-SPOT]
-   - Decided: 7–10 business days (FAQ = operational truth; end-of-day is marketing puff, implausible with content submission + queue).
-   - Ask-vs-decide verdict: DECIDING was right for a first pass, but this is the canonical example of the prompt's one question being well spent — it's the highest-stakes unknown on the page. Next run: ask this one.
-2. **Payments: "$157 × 2" vs "third and final payment"** [Q-SPOT]
-   - Decided: $157 × 2 (the "third and final" line reads as a copy error; 2-payment math $314 > $297 works as a financing premium).
-   - Verdict: deciding fine — low stakes, flagged for Yolando either way.
-3. **Revision window: "3 days" vs "48 hours"**
-   - Decided: 3 days (primary offer copy; friendlier).
-   - Verdict: deciding fine.
-4. **Scarcity "40 spots / limited time"** — unverified → DROPPED per refusal machinery (never invent scarcity). Replaced with honest queue note ("first come, first served").
-   - Verdict: the refusal rule handled it — no question needed. Good.
-5. **Terms "[insert fee percentage]" placeholder** — removed the bracket text; clause now reads "late payments may incur a fee as stated on your invoice." Flagged for Yolando's number.
-6. **Copyright 2025 → 2026.**
+Her ACTUAL pricing (re-extracted from live HTML):
+- **$297 "💰 Pay in Full" = LIGHT card** (warm white, dark text). "$997 Value", "$297/one payment", 8 features WITH full descriptions, 🎯 Fast Track note.
+- **$157 "💳 Prefer to Pay Monthly?" = FEATURED dark navy card** (the only colored one). "$997 Value", "$157/2 payments", same 8 features, 🔒 no-compromise note + payment notes.
+- Both "Click Here" buttons → her real PayPal checkout: https://www.paypal.com/ncp/payment/UTSVJPJFQ6SQ4 (replacing mailto CTAs).
+- My round-3 blue header on the $297 was wrong — reversed per Jon.
 
-## Creative decisions (all mine)
+**Font finding:** her live site uses **Prata** (serif headings) + **Roboto** (body) — confirmed in her Divi CSS. The redesign's Archivo was my default, not her brand. Switching to Prata/Roboto.
 
-7. **Hero headline:** "Still Don't Have a Website? / We've Got You." — picked from the three competing headlines; it names the pain. One headline only.
-8. **Primary CTA:** "Sign Up and Pay — $297". Secondary: free 15-min call (moved up from buried contact section).
-9. **Palette:** charcoal #121210 + warm grays + gold #C9A227 (prompt defaults). [Q-SPOT] Real brand colors unverifiable — headless screenshot blocked by the site's host (ERR_EMPTY_RESPONSE), text fetch carries no color data.
-   - Verdict: defaulting beat asking — Jon wouldn't know Yolando's palette offhand either; needs real brand assets next round.
-10. **Portrait:** monogram "YB" placeholder in a gold-ring frame — clearly a photo slot, NOT a fake person (never invent a founder). [Q-SPOT]
-    - Verdict: placeholder right for pass one; next round ask Jon for a real Yolando photo.
-11. **One background metaphor:** track starting-block lane geometry (subtle SVG line motif). "Starting blocks" = the brand's own metaphor, earned not decorated.
-12. **Brand reconciliation:** "The Starting Blocks" canonical; kept the real contact email hellostart@startthepossible.com (functional) — flagged the domain mismatch for Yolando (should mail move to @thestartingblocks.com?).
-13. **Title tag:** "The Starting Blocks — Your One-Page Website, Done For You" (was 4 keyword phrases).
-14. **Emoji strip:** removed all per-line ✅📅💰 emojis (guru-template slop tell).
-15. **Pricing cards:** two cards, identical feature lists, honest "all sales final" note (their real policy, stated plainly).
-16. **FAQ:** deduped the repeated questions (site asks "what do I provide" twice); kept the real ones.
-17. **Motion:** subtle reveal-on-scroll only. Sales job here is trust, not spectacle — animation second.
-18. **Testimonials:** kept all three, lightly condensed, names + businesses intact. Site-published (not independently verified) — no new claims added.
+**"What We've Built" reimagining:** Jon rejected the static grid of navy boxes. New direction: full-bleed horizontal scroll-snap showcase — editorial panels with big Prata serif project names + logo art + lifestyle imagery, red progress indicator. Elevates her own ticker-strip concept instead of a grid.
 
-## Prompt-iteration notes (for dialing in)
+**Mobile menu polish:** smoother in/out animation (slide + fade, staggered links), refined active states.
 
-- The **one-question rule** worked as designed on the timeline conflict — that's the question to spend it on. Consider: prompt should rank conflicts by stakes before asking.
-- The **"flag, don't fill"** rule produced 5 clean flags (colors, photo, email domain, fee %, scarcity) without stalling the build. Keep.
-- **Refusal machinery** (drop unverified scarcity) fired correctly with zero deliberation — the strongest pattern in the set.
-- Gap: prompt has no rule for **brand/email domain mismatch** (Start The Possible vs The Starting Blocks). Candidate addition: "if the contact email domain differs from the site domain, flag it."
-- Gap: **screenshot/visual review** isn't in the prompt — palette and imagery were decided blind. Candidate addition: a visual-reference step (attach screenshot or brand assets) before Part 5.
-
-## CORRECTION — light version in her colors (Jon, 2026-10-04)
-
-Jon redirected: this is Yolando's site, not his — his personal charcoal/gold taste does not apply. The build is now a LIGHT version in her actual brand scheme.
-
-**Her real palette** (extracted from thestartingblocks.com's Divi theme CSS, not guessed): accent red **#E02B20** (theme customizer accent — links, buttons, footer headings, menu highlights), white backgrounds, near-black text. The site is light and warm; the earlier charcoal/gold was my default, not her brand.
-
-**New tokens:** bg warm white #FDFCFA · panels #F7F5F1 · ink #1A1A1A · muted #6B6560 · accent #E02B20 · hairlines rgba(224,43,32,.14). Red used sparingly — many small touches, never large areas.
-
-**Prompt-iteration note:** this validates the "visual-reference step" gap flagged above — the prompt needs a rule to pull the real palette (theme CSS / screenshot / brand assets) before art direction, instead of falling back to defaults. Defaults silently applied the wrong taste. New candidate rule: "extract the site's actual accent color from its theme CSS or a screenshot; never default to the builder's house palette on someone else's brand."
-
-## Round 2 — full asset migration (Jon, 2026-10-04)
-
-Jon: "I need all the info and assets from her current page into our new design."
-
-- **Blue restored.** Her site is red + blue; the light rebuild had dropped the blue. New rule: red #E02B20 primary (~70%), blue #2EA3F2 secondary (~30%: links, secondary buttons, markers, video frames). Confirmed from her Divi CSS that #2ea3f2 is live on her page, not just a Divi default assumption.
-- **Pricing → tables like hers.** Rebuilt as two tables with checkmark rows per feature (SVG checks, no emoji), $297 featured with red border.
-- **Her real logo** in the nav (Copy-of-Divi-text-logo-1.png).
-- **Her profile photo** (uploaded by Jon) in hero + About. Hosted temporarily on Muse file storage (expires 2026-10-06) — production must self-host.
-- **Portfolio section added** — "What We've Built" with her 9 client site images (was missing entirely from pass 1; her live site leads with it).
-- **Testimonial avatars** — her real hart/mk/kits images next to each quote.
-- **Both videos embedded** — Vimeo "One page website is all you need" (player.vimeo.com/video/1120977751) after What-you-get; YouTube "How I Got My Start" (youtube.com/embed/RCUzzoS8HO4) in About.
-- All her-site images hotlink to thestartingblocks.com for the draft; flagged in code comments to self-host for production.
-
-**Prompt-iteration note:** pass 1 was text-only and missed the entire visual layer (photos, portfolio, videos, logo, secondary color). The prompt needs an "asset inventory" step: extract images, embeds, and the full color story from the source BEFORE building — not just copy. Text-first drafting lost half the site.
-
-## Photo handling correction (Jon, 2026-10-04)
-
-Jon: user-provided assets go straight in the repo — no temporary links. Committed her portrait to `assets/yolando-portrait.jpg` on main. The temp Muse file link remains only as the build-time fetch for the page builder; the repo copy is the durable source. Lesson: commit user-supplied assets to the repo FIRST, then hand the builder a reference — don't reach for temp storage.
-
-## Prompt-fit finding — redesigns need their own mode (Jon, 2026-10-04)
-
-Jon's read, and he's right: the Harvest Build Prompt was built for greenfield builds (blank page, invent the copy, section-by-section approvals). A redesign is a different job:
-
-- The source site IS the spec. Fidelity to existing copy/assets/brand is the default; deviations get flagged, not the other way around.
-- Asset inventory (images, videos, embeds, full color story) must come BEFORE the build, not as a round-2 correction.
-- The approval gates don't map: on a redesign, "review each section" should mean "review each deviation from the original," not "review each new invention."
-- Copy posture flips: greenfield = write the best copy; redesign = keep her words, fix only what's broken or contradictory.
-
-Candidate prompt addition: a REDESIGN mode — audit the source, inventory every asset, rebuild with maximum fidelity, and log every deviation as a decision with a reason. No apology needed for finding this — that's what the test is for.
-
-## Round 3 — QA failures owned + fixed (Jon, 2026-10-04)
-
-Jon's review caught four real misses:
-1. **Portfolio cards unreadable** — her portfolio PNGs are white text built for dark backgrounds; the builder put them on light cards. My QA failure for letting it slide. Fix: deep navy #0B1B33 cards behind all portfolio images.
-2. **No functional nav** — the red "One Page" block was a placeholder-ish fail, not a nav. Fix: real sticky nav with her logo image + her 7 exact menu items (Home, What We Do, Price, Your Site, FAQ, The Designer, Portfolio), scroll-spy active states, mobile hamburger, dropdown support.
-3. **Pricing colors** — hers are dark navy cards with royal-blue accent on featured + green ✅ checks. Fix: match her treatment, keep her 💳/🎯 touches.
-4. **Her icons unused** — she uses emoji as icons site-wide (✅💻📅🎯🔒📝👥💰💳🚨🛠❌💡👉✨❓📄🖋, 73 ✅ alone). REVERSED the earlier no-emoji rule: her icons are her brand voice, spread them through the redesign.
-
-**Sourcing answer (for Jon's question):** all images were already pulled straight from her site via hotlink — presentation was the bug, not sourcing. He does not need to supply the re-downloads.
+**Content gap found:** her "Your Journey" section (Who This Is For / What's Included / What Your Site Will Have / What You'll Walk Away With / Free Prep Session) was never in the redesign — adding it.
