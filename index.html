@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="light dark" />
   <meta name="description" content="Done-for-you one-page WordPress websites for service businesses — copy, design, payments, email, and SEO handled for you." />
+  <meta property="og:title" content="The Starting Blocks — Done-For-You One-Page Websites" />
+  <meta property="og:description" content="A professional one-page website for your service business — copy, design, payments, and email handled for you. $297." />
+  <meta property="og:image" content="https://agentzlab.github.io/TheStartingBlocks-Remake/assets/screenshot.png" />
+  <meta property="og:url" content="https://agentzlab.github.io/TheStartingBlocks-Remake/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Starting Blocks — Done-For-You One-Page Websites" />
+  <meta name="twitter:description" content="A professional one-page website for your service business — copy, design, payments, and email handled for you. $297." />
+  <meta name="twitter:image" content="https://agentzlab.github.io/TheStartingBlocks-Remake/assets/screenshot.png" />
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -441,7 +450,30 @@
       object-fit: cover;
     }
 
-    .steps { margin-top: 60px; }
+    .steps {
+      --timeline-progress: 0;
+      position: relative;
+      margin-top: 60px;
+      padding-left: 54px;
+    }
+    .steps::before,
+    .steps::after {
+      content: "";
+      position: absolute;
+      top: 42px;
+      bottom: 42px;
+      left: 15px;
+      width: 3px;
+      border-radius: 999px;
+      transform-origin: top;
+      pointer-events: none;
+    }
+    .steps::before { background: var(--quiet-line); }
+    .steps::after {
+      background: #e02b20;
+      transform: scaleY(var(--timeline-progress));
+      transition: transform .08s linear;
+    }
     .step {
       display: grid;
       grid-template-columns: minmax(86px, 150px) minmax(190px, .65fr) minmax(280px, 1.35fr);
@@ -453,12 +485,23 @@
     .step:last-of-type { border-bottom: 1px solid var(--quiet-line); }
     .step-num {
       color: var(--blue-strong);
+      font-family: "Prata", Georgia, serif;
       font-size: clamp(38px, 5vw, 68px);
-      font-weight: 800;
+      font-weight: 400;
       letter-spacing: -.04em;
       line-height: .8;
+      transition: color .45s ease;
     }
     .step p { margin: 0; color: var(--muted); }
+    .has-js .steps .step {
+      transition: opacity .65s ease, transform .65s cubic-bezier(.22,.74,.18,1);
+    }
+    .has-js .steps .step:not(.is-active) {
+      opacity: .34;
+      transform: translateY(22px);
+    }
+    .has-js .steps .step.is-active { opacity: 1; transform: translateY(0); }
+    .has-js .steps .step.is-active .step-num { color: #e02b20; }
     .honest-note {
       max-width: 720px;
       margin: 24px 0 0 auto;
@@ -1071,9 +1114,11 @@
       .portfolio-intro { display: grid; gap: 30px; }
       .about-portrait .portrait { width: min(78vw, 300px); }
       .get-grid .marker-list + .marker-list li:first-child { border-top: 0; }
+      .steps { padding-left: 30px; }
+      .steps::before, .steps::after { left: 4px; }
       .step { grid-template-columns: 72px 1fr; gap: 18px; }
       .step p { grid-column: 2; }
-      .honest-note { margin-left: 90px; }
+      .honest-note { margin-left: 102px; }
       .price-card { min-height: 280px; }
       .pricing .honest-note { margin-left: 0; }
       .final-cta-inner { margin-left: 0; }
@@ -1097,7 +1142,12 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
-      .has-js .reveal { opacity: 1; transform: none; }
+      .has-js .reveal,
+      .has-js .steps .step,
+      .has-js .steps .step:not(.is-active) { opacity: 1; transform: none; }
+      .steps { --timeline-progress: 1; }
+      .steps::after { transform: scaleY(1); transition: none; }
+      .step-num { transition: none; }
     }
   </style>
 </head>
@@ -1768,8 +1818,46 @@
         window.addEventListener('resize', updatePortfolioProgress);
       }
 
+      var stepsTimeline = document.querySelector('.steps');
+      var timelineSteps = stepsTimeline ? Array.prototype.slice.call(stepsTimeline.querySelectorAll('.step')) : [];
+      var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (stepsTimeline && timelineSteps.length) {
+        if (reducedMotion || !('IntersectionObserver' in window)) {
+          timelineSteps.forEach(function (step) { step.classList.add('is-active'); });
+          stepsTimeline.style.setProperty('--timeline-progress', '1');
+        } else {
+          var stepObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-active');
+                stepObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.28, rootMargin: '0px 0px -12% 0px' });
+          timelineSteps.forEach(function (step) { stepObserver.observe(step); });
+
+          var timelineFrame = 0;
+          function updateTimeline() {
+            timelineFrame = 0;
+            var first = timelineSteps[0].getBoundingClientRect();
+            var last = timelineSteps[timelineSteps.length - 1].getBoundingClientRect();
+            var start = first.top + (first.height * .5);
+            var end = last.top + (last.height * .5);
+            var viewportMarker = window.innerHeight * .56;
+            var progress = (viewportMarker - start) / Math.max(1, end - start);
+            stepsTimeline.style.setProperty('--timeline-progress', String(Math.max(0, Math.min(1, progress))));
+          }
+          function requestTimelineUpdate() {
+            if (!timelineFrame) { timelineFrame = window.requestAnimationFrame(updateTimeline); }
+          }
+          updateTimeline();
+          window.addEventListener('scroll', requestTimelineUpdate, { passive: true });
+          window.addEventListener('resize', requestTimelineUpdate);
+        }
+      }
+
       var reveals = document.querySelectorAll('.reveal');
-      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if ('IntersectionObserver' in window && !reducedMotion) {
         var observer = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
