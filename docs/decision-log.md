@@ -67,3 +67,7 @@ Jon: "I need all the info and assets from her current page into our new design."
 - All her-site images hotlink to thestartingblocks.com for the draft; flagged in code comments to self-host for production.
 
 **Prompt-iteration note:** pass 1 was text-only and missed the entire visual layer (photos, portfolio, videos, logo, secondary color). The prompt needs an "asset inventory" step: extract images, embeds, and the full color story from the source BEFORE building — not just copy. Text-first drafting lost half the site.
+
+## Photo handling correction (Jon, 2026-10-04)
+
+Jon: user-provided assets go straight in the repo — no temporary links. Committed her portrait to `assets/yolando-portrait.jpg` on main. The temp Muse file link remains only as the build-time fetch for the page builder; the repo copy is the durable source. Lesson: commit user-supplied assets to the repo FIRST, then hand the builder a reference — don't reach for temp storage.
