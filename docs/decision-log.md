@@ -1,5 +1,4 @@
 
-## Repo page update (Jon, 2026-10-04)
-- Pushed round-6 build as index.html (single self-contained file, 6.8MB) + fresh hero screenshot (assets/screenshot.png) + .nojekyll + template README + docs/CURSOR-BLUEPRINT.md, one commit.
-- Repo description + 5 topics set.
-- GitHub Pages BLOCKED: free plan doesn't support Pages on private repos (422). Preview stays on the private Muse artifact until Jon decides: flip repo public → github.io link goes live, or keep private.
+## Repo went public (Jon, 2026-10-04)
+- Jon chose public. Repo flipped private→public, Pages enabled from main, live at https://agentzlab.github.io/TheStartingBlocks-Remake/ (verified 200, full page).
+- README restored with live Pages/Preview badges. Note: repo is now PUBLIC — the draft is visible to anyone with the link. Still no contact with Yolando; nothing sent to her.
