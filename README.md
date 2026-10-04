@@ -1,18 +1,67 @@
-# TheStartingBlocks-Remake
+# The Starting Blocks — Redesign Draft
 
-Redesign + remake of [thestartingblocks.com](https://thestartingblocks.com/) — Yolando Mitchell Brown's done-for-you one-page website service.
+> A full redesign draft of **thestartingblocks.com** — Yolando Mitchell Brown's done-for-you one-page website service for service-based businesses.
 
-**Method:** driven by [The Harvest Build Prompt](../../personal-jonbeatz-digitalstudioz-skill-pack/files/2026-10-04-funnelsgenius-master-build-prompt.md) (FunnelsGenius 15-PDF synthesis, distilled 2026-10-04). This repo is the live test of that prompt.
+[![Pages](https://img.shields.io/badge/Pages-live-brightgreen)](https://agentzlab.github.io/TheStartingBlocks-Remake/)
+[![Last commit](https://img.shields.io/github/last-commit/agentzlab/TheStartingBlocks-Remake)](https://github.com/agentzlab/TheStartingBlocks-Remake/commits/main)
+[![Repo size](https://img.shields.io/github/repo-size/agentzlab/TheStartingBlocks-Remake)](https://github.com/agentzlab/TheStartingBlocks-Remake)
+[![Static site](https://img.shields.io/badge/site-static-blue)](https://agentzlab.github.io/TheStartingBlocks-Remake/)
+[![Preview](https://img.shields.io/badge/Preview-live-red)](https://agentzlab.github.io/TheStartingBlocks-Remake/)
 
-## Status
+**Live preview:** https://agentzlab.github.io/TheStartingBlocks-Remake/
 
-- [x] Repo created (2026-10-04, private)
-- [x] Part 1 context block filled from the live site (`docs/context-block.md`)
-- [x] Pre-build readouts (`docs/prebuild-readouts.md`)
-- [x] MODE B audit of the current site (`docs/audit.md`)
-- [ ] Yolando resolves 3 factual conflicts (timeline, payment terms, revision window)
-- [ ] Section-gated build (prompt Part 4 — one section at a time, approve + lock)
+![Hero screenshot](assets/screenshot.png)
 
-## Key audit findings (preview)
+## What's inside
 
-The current site has three factual conflicts the prompt's verification machinery caught: "by the end of the day" vs "7–10 business days"; "$157 × 2 payments" vs "third and final payment"; "revision within 3 days" vs "within 48 hours." Plus unverified scarcity, a placeholder left in Terms, and three competing hero headlines. Full audit in `docs/audit.md`.
+- Sticky navy nav with her exact 7 labels (Home, What We Do, Price, Your Site, FAQ, The Designer, Portfolio) + Price dropdown + polished mobile slide-in menu
+- Hero: "Still don't have a website? We've Got You." with Yolando's portrait
+- First video (Vimeo) + her six service descriptions, word-for-word, with her bold/red emphasis
+- Founder's story: "How I Got My Start" with custom full-bleed thumbnail, click-to-play YouTube
+- "Who We Build For" — six audience cards (Business Owners, Creators, Creatives, Entrepreneurs, Small Businesses)
+- Pricing matching her real setup: **$297 light card** / **$157 dark featured card**, full feature copy, real PayPal checkout buttons
+- "Your Journey" — Who This Is For / What's Included / What Your Site Will Have / What You'll Walk Away With / Free Prep Session
+- "What We've Built" — full-bleed horizontal scroll-snap project showcase (9 projects)
+- Testimonials with avatars, FAQ, contact with real email + free 15-min call CTA
+
+## Design language
+
+- Warm light background, near-black text
+- Red primary `#E02B20` (buttons `#ff0000`), blue secondary `#2EA3F2`
+- Deep navy `#0B1B33` for portfolio/pricing feature surfaces
+- **Prata** serif headings + **Roboto** body — her actual brand fonts
+- Her emoji icon language (✅ 💰 💳 🎯 🔒 …), used deliberately
+
+## Tech stack
+
+| Layer | Choice |
+|---|---|
+| Page | Single self-contained `index.html` (exported from the Muse web-artifact build) |
+| Fonts | Google Fonts: Prata + Roboto |
+| Video | YouTube + Vimeo embeds |
+| Checkout | PayPal payment links (her real ones) |
+| Hosting | GitHub Pages, no build step |
+
+## Project structure
+
+```
+├── index.html                  # the site (self-contained)
+├── assets/
+│   ├── screenshot.png          # README hero (refresh on every build change)
+│   ├── yolando-portrait.jpg    # founder portrait
+│   └── img/                    # supplied lifestyle, audience + video poster images
+├── docs/
+│   ├── CURSOR-BLUEPRINT.md     # builder briefing for future work
+│   ├── audit.md                # source-site audit + resolved contradictions
+│   ├── context-block.md
+│   ├── decision-log.md         # every design decision, dated
+│   └── prebuild-readouts.md
+├── .nojekyll
+└── README.md
+```
+
+## Workflow
+
+- `main` = the live preview. Changes land on a new branch first (`redesign-round-N`), then merge when approved.
+- Screenshots refresh on every build change — no stale screenshots.
+- Nothing here touches the live WordPress site or goes to Yolando until Jon approves.
