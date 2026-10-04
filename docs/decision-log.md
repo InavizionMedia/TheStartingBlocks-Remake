@@ -52,3 +52,18 @@ Jon redirected: this is Yolando's site, not his — his personal charcoal/gold t
 **New tokens:** bg warm white #FDFCFA · panels #F7F5F1 · ink #1A1A1A · muted #6B6560 · accent #E02B20 · hairlines rgba(224,43,32,.14). Red used sparingly — many small touches, never large areas.
 
 **Prompt-iteration note:** this validates the "visual-reference step" gap flagged above — the prompt needs a rule to pull the real palette (theme CSS / screenshot / brand assets) before art direction, instead of falling back to defaults. Defaults silently applied the wrong taste. New candidate rule: "extract the site's actual accent color from its theme CSS or a screenshot; never default to the builder's house palette on someone else's brand."
+
+## Round 2 — full asset migration (Jon, 2026-10-04)
+
+Jon: "I need all the info and assets from her current page into our new design."
+
+- **Blue restored.** Her site is red + blue; the light rebuild had dropped the blue. New rule: red #E02B20 primary (~70%), blue #2EA3F2 secondary (~30%: links, secondary buttons, markers, video frames). Confirmed from her Divi CSS that #2ea3f2 is live on her page, not just a Divi default assumption.
+- **Pricing → tables like hers.** Rebuilt as two tables with checkmark rows per feature (SVG checks, no emoji), $297 featured with red border.
+- **Her real logo** in the nav (Copy-of-Divi-text-logo-1.png).
+- **Her profile photo** (uploaded by Jon) in hero + About. Hosted temporarily on Muse file storage (expires 2026-10-06) — production must self-host.
+- **Portfolio section added** — "What We've Built" with her 9 client site images (was missing entirely from pass 1; her live site leads with it).
+- **Testimonial avatars** — her real hart/mk/kits images next to each quote.
+- **Both videos embedded** — Vimeo "One page website is all you need" (player.vimeo.com/video/1120977751) after What-you-get; YouTube "How I Got My Start" (youtube.com/embed/RCUzzoS8HO4) in About.
+- All her-site images hotlink to thestartingblocks.com for the draft; flagged in code comments to self-host for production.
+
+**Prompt-iteration note:** pass 1 was text-only and missed the entire visual layer (photos, portfolio, videos, logo, secondary color). The prompt needs an "asset inventory" step: extract images, embeds, and the full color story from the source BEFORE building — not just copy. Text-first drafting lost half the site.
