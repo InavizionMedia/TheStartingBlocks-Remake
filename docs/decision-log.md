@@ -82,3 +82,13 @@ Jon's read, and he's right: the Harvest Build Prompt was built for greenfield bu
 - Copy posture flips: greenfield = write the best copy; redesign = keep her words, fix only what's broken or contradictory.
 
 Candidate prompt addition: a REDESIGN mode — audit the source, inventory every asset, rebuild with maximum fidelity, and log every deviation as a decision with a reason. No apology needed for finding this — that's what the test is for.
+
+## Round 3 — QA failures owned + fixed (Jon, 2026-10-04)
+
+Jon's review caught four real misses:
+1. **Portfolio cards unreadable** — her portfolio PNGs are white text built for dark backgrounds; the builder put them on light cards. My QA failure for letting it slide. Fix: deep navy #0B1B33 cards behind all portfolio images.
+2. **No functional nav** — the red "One Page" block was a placeholder-ish fail, not a nav. Fix: real sticky nav with her logo image + her 7 exact menu items (Home, What We Do, Price, Your Site, FAQ, The Designer, Portfolio), scroll-spy active states, mobile hamburger, dropdown support.
+3. **Pricing colors** — hers are dark navy cards with royal-blue accent on featured + green ✅ checks. Fix: match her treatment, keep her 💳/🎯 touches.
+4. **Her icons unused** — she uses emoji as icons site-wide (✅💻📅🎯🔒📝👥💰💳🚨🛠❌💡👉✨❓📄🖋, 73 ✅ alone). REVERSED the earlier no-emoji rule: her icons are her brand voice, spread them through the redesign.
+
+**Sourcing answer (for Jon's question):** all images were already pulled straight from her site via hotlink — presentation was the bug, not sourcing. He does not need to supply the re-downloads.
