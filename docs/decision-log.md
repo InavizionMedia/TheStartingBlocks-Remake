@@ -71,3 +71,14 @@ Jon: "I need all the info and assets from her current page into our new design."
 ## Photo handling correction (Jon, 2026-10-04)
 
 Jon: user-provided assets go straight in the repo — no temporary links. Committed her portrait to `assets/yolando-portrait.jpg` on main. The temp Muse file link remains only as the build-time fetch for the page builder; the repo copy is the durable source. Lesson: commit user-supplied assets to the repo FIRST, then hand the builder a reference — don't reach for temp storage.
+
+## Prompt-fit finding — redesigns need their own mode (Jon, 2026-10-04)
+
+Jon's read, and he's right: the Harvest Build Prompt was built for greenfield builds (blank page, invent the copy, section-by-section approvals). A redesign is a different job:
+
+- The source site IS the spec. Fidelity to existing copy/assets/brand is the default; deviations get flagged, not the other way around.
+- Asset inventory (images, videos, embeds, full color story) must come BEFORE the build, not as a round-2 correction.
+- The approval gates don't map: on a redesign, "review each section" should mean "review each deviation from the original," not "review each new invention."
+- Copy posture flips: greenfield = write the best copy; redesign = keep her words, fix only what's broken or contradictory.
+
+Candidate prompt addition: a REDESIGN mode — audit the source, inventory every asset, rebuild with maximum fidelity, and log every deviation as a decision with a reason. No apology needed for finding this — that's what the test is for.
