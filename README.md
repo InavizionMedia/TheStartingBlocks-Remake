@@ -1,14 +1,15 @@
 # The Starting Blocks — Redesign Draft
+**Branch policy:** work happens on the latest version branch — list all branches first, never assume the GitHub default is current. Working line: `main`.
 
 > A full redesign draft of **thestartingblocks.com** — Yolando Mitchell Brown's done-for-you one-page website service for service-based businesses.
 
-[![Pages](https://img.shields.io/badge/Pages-live-brightgreen)](https://agentzlab.github.io/TheStartingBlocks-Remake/)
-[![Last commit](https://img.shields.io/github/last-commit/agentzlab/TheStartingBlocks-Remake)](https://github.com/agentzlab/TheStartingBlocks-Remake/commits/main)
-[![Repo size](https://img.shields.io/github/repo-size/agentzlab/TheStartingBlocks-Remake)](https://github.com/agentzlab/TheStartingBlocks-Remake)
-[![Static site](https://img.shields.io/badge/site-static-blue)](https://agentzlab.github.io/TheStartingBlocks-Remake/)
-[![Preview](https://img.shields.io/badge/Preview-live-red)](https://agentzlab.github.io/TheStartingBlocks-Remake/)
+[![Pages](https://img.shields.io/badge/Pages-live-brightgreen)](https://inavizionmedia.github.io/TheStartingBlocks-Remake/)
+[![Last commit](https://img.shields.io/github/last-commit/InavizionMedia/TheStartingBlocks-Remake)](https://github.com/InavizionMedia/TheStartingBlocks-Remake/commits/main)
+[![Repo size](https://img.shields.io/github/repo-size/InavizionMedia/TheStartingBlocks-Remake)](https://github.com/InavizionMedia/TheStartingBlocks-Remake)
+[![Static site](https://img.shields.io/badge/site-static-blue)](https://inavizionmedia.github.io/TheStartingBlocks-Remake/)
+[![Preview](https://img.shields.io/badge/Preview-live-red)](https://inavizionmedia.github.io/TheStartingBlocks-Remake/)
 
-**Live preview:** https://agentzlab.github.io/TheStartingBlocks-Remake/
+**Live preview:** https://inavizionmedia.github.io/TheStartingBlocks-Remake/
 
 ![Hero screenshot](assets/screenshot.png)
 
