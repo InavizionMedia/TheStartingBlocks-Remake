@@ -525,6 +525,15 @@
       line-height: .8;
       transition: color .45s ease;
     }
+    .step-title {
+      display: grid;
+      grid-template-columns: 1.35em minmax(0, 1fr);
+      column-gap: .35em;
+      align-items: start;
+    }
+    .step-title-icon,
+    .step-title-text { display: block; }
+    .step-title-text { min-width: 0; }
     .step p { margin: 0; color: var(--muted); }
     .has-js .steps .step {
       transition: opacity .65s ease, transform .65s cubic-bezier(.22,.74,.18,1);
@@ -806,11 +815,35 @@
       background: #0b1b33;
       color: #ffffff;
     }
-    .journey-prep h3 { font-size: clamp(29px, 3.5vw, 48px); }
+    .journey-prep h3 {
+      max-width: 390px;
+      margin-bottom: 14px;
+      color: #ffffff;
+      font-size: clamp(27px, 3.2vw, 43px);
+      letter-spacing: -.025em;
+      text-wrap: balance;
+    }
+    .journey-prep-title-accent { color: #f2bf5a; }
+    .journey-prep-title-rest { white-space: nowrap; }
     .journey-prep .prep-kicker { margin-bottom: 13px; color: #ffffff; font-weight: 900; letter-spacing: .05em; }
     .journey-prep p { color: rgba(255, 255, 255, .78); }
-    .journey-prep .journey-list { margin-top: 0; }
-    .journey-prep .journey-list li { color: rgba(255, 255, 255, .94); border-top-color: rgba(255, 255, 255, .11); }
+    .journey-prep-checks { align-self: center; }
+    .journey-prep .journey-list {
+      margin-top: 0;
+      row-gap: 6px;
+    }
+    .journey-prep .journey-list li {
+      padding: 10px 0;
+      color: rgba(255, 255, 255, .94);
+      border-top-color: rgba(255, 255, 255, .11);
+    }
+    .journey-prep-footnote {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, .72) !important;
+      font-size: 15px;
+      font-style: italic;
+      line-height: 1.5;
+    }
 
     .quote-grid {
       display: grid;
@@ -2335,27 +2368,27 @@
         <div class="steps">
           <article class="step reveal">
             <div class="step-num">01</div>
-            <h3>💳 Sign up and pay</h3>
+            <h3 class="step-title"><span class="step-title-icon" aria-hidden="true">💳</span><span class="step-title-text">Sign up and pay</span></h3>
             <p>Secure your spot. Pay in full ($297) and move to the front of the queue.</p>
           </article>
           <article class="step reveal">
             <div class="step-num">02</div>
-            <h3>📅 Book your 1:1 call</h3>
+            <h3 class="step-title"><span class="step-title-icon" aria-hidden="true">📅</span><span class="step-title-text">Book your 1:1 call</span></h3>
             <p>We map out your site, your message, and your game plan.</p>
           </article>
           <article class="step reveal">
             <div class="step-num">03</div>
-            <h3>📝 Complete the prep form</h3>
+            <h3 class="step-title"><span class="step-title-icon" aria-hidden="true">📝</span><span class="step-title-text">Complete the prep form</span></h3>
             <p>Tell us about your services; everything gets customized.</p>
           </article>
           <article class="step reveal">
             <div class="step-num">04</div>
-            <h3>👥 Prep in the Community Group</h3>
+            <h3 class="step-title"><span class="step-title-icon" aria-hidden="true">👥</span><span class="step-title-text">Prep in the Community Group</span></h3>
             <p>Get ready with guidance and support inside our <a href="https://www.facebook.com/groups/startthepossible" target="_blank" rel="noopener">private group</a>.</p>
           </article>
           <article class="step reveal">
             <div class="step-num">05</div>
-            <h3>✨ Launch</h3>
+            <h3 class="step-title"><span class="step-title-icon" aria-hidden="true">✨</span><span class="step-title-text">Launch</span></h3>
             <p>Your site goes live in 7–10 business days once your content is in.</p>
           </article>
         </div>
@@ -2503,18 +2536,20 @@
         <article class="journey-prep reveal">
           <div>
             <p class="prep-kicker">💡 You Must Have</p>
-            <h3>🚨 FREE PREP SESSION 🚨</h3>
+            <h3><span class="journey-prep-title-accent">FREE</span> <span class="journey-prep-title-rest">PREP SESSION</span></h3>
             <p>Let's Set Up Your Website Basics – Together.</p>
             <p>Before we build your site, we'll make sure you have everything in place to launch smoothly and start getting paid.</p>
             <a class="btn" href="https://www.facebook.com/groups/startthepossible" target="_blank" rel="noopener">Join the Prep Session Group</a>
           </div>
-          <ul class="journey-list">
-            <li><svg class="journey-check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="10"/><path d="M5.4 10.2 8.45 13.15 14.7 6.85"/></svg><span>A domain name (like www.yourbusiness.com)</span></li>
-            <li><svg class="journey-check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="10"/><path d="M5.4 10.2 8.45 13.15 14.7 6.85"/></svg><span>Website hosting</span></li>
-            <li><svg class="journey-check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="10"/><path d="M5.4 10.2 8.45 13.15 14.7 6.85"/></svg><span>Email marketing setup</span></li>
-            <li><svg class="journey-check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="10"/><path d="M5.4 10.2 8.45 13.15 14.7 6.85"/></svg><span>Stripe &amp; PayPal connected</span></li>
-            <li><svg class="journey-check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="10"/><path d="M5.4 10.2 8.45 13.15 14.7 6.85"/></svg><span>🛠 Don't have them yet? I'll walk you through setting them up!</span></li>
-          </ul>
+          <div class="journey-prep-checks">
+            <ul class="journey-list">
+              <li><svg class="journey-check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="10"/><path d="M5.4 10.2 8.45 13.15 14.7 6.85"/></svg><span>A domain name (like www.yourbusiness.com)</span></li>
+              <li><svg class="journey-check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="10"/><path d="M5.4 10.2 8.45 13.15 14.7 6.85"/></svg><span>Website hosting</span></li>
+              <li><svg class="journey-check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="10"/><path d="M5.4 10.2 8.45 13.15 14.7 6.85"/></svg><span>Email marketing setup</span></li>
+              <li><svg class="journey-check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="10"/><path d="M5.4 10.2 8.45 13.15 14.7 6.85"/></svg><span>Stripe &amp; PayPal connected</span></li>
+            </ul>
+            <p class="journey-prep-footnote">🛠 Don't have them yet? I'll walk you through setting them up!</p>
+          </div>
         </article>
       </div>
     </section>
