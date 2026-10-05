@@ -268,8 +268,8 @@
       width: min(var(--max), calc(100% - (var(--side) * 2)));
       margin-inline: auto;
     }
-    .section { padding: clamp(88px, 10vw, 148px) 0; }
-    .top-flow-section { padding-block: clamp(64px, 7vw, 96px); }
+    .section { padding: clamp(64px, 7vw, 104px) 0; }
+    .top-flow-section { padding-block: clamp(48px, 5vw, 68px); }
     .section-rule { border-top: 1px solid var(--quiet-line); }
     .eyebrow {
       margin: 0 0 22px;
@@ -999,13 +999,13 @@
     body.testimonial-open,
     body.portfolio-lightbox-open { overflow: hidden; }
 
-    .portfolio-section { padding-bottom: clamp(88px, 10vw, 148px); overflow: hidden; }
+    .portfolio-section { padding-bottom: clamp(64px, 7vw, 104px); overflow: hidden; }
     .portfolio-intro {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       gap: 32px;
       align-items: end;
-      padding-top: clamp(88px, 10vw, 148px);
+      padding-top: clamp(64px, 7vw, 104px);
       padding-bottom: 40px;
     }
     .portfolio-intro .lede { margin-bottom: 0; }
@@ -1538,7 +1538,7 @@
     .about-video .video-poster img { border-radius: 8px; }
     .founder-after {
       max-width: 920px;
-      padding: clamp(38px, 4.5vw, 62px) 0 clamp(44px, 5vw, 68px);
+      padding: clamp(32px, 3.5vw, 48px) 0 clamp(34px, 3.7vw, 50px);
     }
     .founder-after .first-client {
       margin-top: 0;
@@ -1602,7 +1602,7 @@
     details[open] summary::after { transform: rotate(0); }
     details p { max-width: 720px; margin: -5px 48px 25px 0; color: var(--muted); }
 
-    .final-cta { padding: clamp(100px, 13vw, 180px) 0; }
+    .final-cta { padding: clamp(72px, 9vw, 126px) 0; }
     .final-cta-inner {
       max-width: 920px;
       margin-left: clamp(0px, 8vw, 110px);
@@ -1623,7 +1623,7 @@
     .text-link:hover, .text-link:focus-visible { color: var(--gold); }
 
     .site-footer {
-      padding: clamp(56px, 6vw, 78px) 0 36px;
+      padding: clamp(42px, 4.5vw, 58px) 0 30px;
       background: var(--panel);
       border-top: 1px solid var(--quiet-line);
     }
@@ -1952,8 +1952,8 @@
         --max: 1220px;
         --side: clamp(28px, 4.25vw, 64px);
       }
-      .section { padding-block: clamp(82px, 7.8vw, 126px); }
-      .top-flow-section { padding-block: clamp(62px, 6.1vw, 92px); }
+      .section { padding-block: clamp(60px, 5.6vw, 90px); }
+      .top-flow-section { padding-block: clamp(46px, 4.4vw, 66px); }
       .nav { min-height: 76px; }
       .hero {
         min-height: min(790px, calc(100svh - 76px));
@@ -1993,16 +1993,16 @@
     }
 
     @media (max-width: 900px) {
-      .section { padding-block: clamp(76px, 10vw, 98px); }
-      .top-flow-section { padding-block: clamp(60px, 8vw, 76px); }
+      .section { padding-block: clamp(56px, 7.2vw, 72px); }
+      .top-flow-section { padding-block: clamp(46px, 6vw, 58px); }
       .hero { padding-block: 52px 88px; }
       .section-intro-media,
       .video-grid,
       .business-talk-grid,
       .faq-layout { gap: 34px; }
       .price-grid { align-items: stretch; }
-      .founder-story-band { margin-top: 72px; padding-block: 72px; }
-      .founder-after { padding-block: 42px 60px; }
+      .founder-story-band { margin-top: 54px; padding-block: 54px; }
+      .founder-after { padding-block: 32px 44px; }
       .faq-side .section-photo { max-width: 540px; }
       .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
@@ -2036,8 +2036,8 @@
       .portrait-wrap { width: min(78vw, 300px); }
       .hero-copy .lede { margin-bottom: 28px; }
       .proof-band { margin-top: 32px; }
-      .section { padding-block: 72px; }
-      .top-flow-section { padding-block: 58px; }
+      .section { padding-block: 52px; }
+      .top-flow-section { padding-block: 44px; }
       .section-intro-media,
       .video-grid,
       .business-talk-grid,
@@ -2065,8 +2065,8 @@
       .journey-prep { margin-top: 22px; padding: 30px 22px; gap: 24px; }
       .quote-grid { margin-top: 36px; }
       blockquote, blockquote + blockquote { padding-block: 28px; }
-      .portfolio-intro { padding-top: 72px; }
-      .portfolio-section { padding-bottom: 72px; }
+      .portfolio-intro { padding-top: 52px; }
+      .portfolio-section { padding-bottom: 52px; }
       .portfolio-panel,
       .portfolio-image-panel { min-height: 470px; }
       .portfolio-panel { flex-basis: 88vw; }
@@ -2105,15 +2105,15 @@
       .about-portrait { width: 100%; }
       .about-portrait .portrait { width: min(78vw, 300px); margin-inline: auto; }
       .founder-copy h2 { margin-bottom: 22px; }
-      .founder-story-band { margin-top: 58px; padding-block: 58px; }
+      .founder-story-band { margin-top: 44px; padding-block: 44px; }
       .about-video-head { margin-bottom: 26px; text-align: left; }
-      .founder-after { padding-block: 36px 52px; }
+      .founder-after { padding-block: 30px 40px; }
       .faq-side h2 { margin-bottom: 24px; }
       .faq-side .section-photo { max-width: none; }
       summary { padding-block: 22px; }
       details p { margin-right: 22px; }
-      .final-cta { padding-block: 92px; }
-      .site-footer { padding-block: 52px max(34px, env(safe-area-inset-bottom)); }
+      .final-cta { padding-block: 64px; }
+      .site-footer { padding-block: 40px max(30px, env(safe-area-inset-bottom)); }
       .footer-grid {
         grid-template-columns: 1fr;
         gap: 34px;
@@ -2140,8 +2140,8 @@
       h1 { font-size: clamp(41px, 12.5vw, 49px); }
       h2 { font-size: clamp(33px, 9.4vw, 41px); }
       .lede { font-size: 17px; }
-      .section { padding-block: 66px; }
-      .top-flow-section { padding-block: 54px; }
+      .section { padding-block: 48px; }
+      .top-flow-section { padding-block: 40px; }
       .hero { padding-block: 34px 68px; }
       .portrait-wrap { width: 100%; }
       .step { grid-template-columns: 54px 1fr; gap: 14px; }
